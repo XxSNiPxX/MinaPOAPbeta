@@ -110,6 +110,11 @@ Before you begin, ensure you have the following installed on your system:
 - Ensure you have sufficient MINA in your devenet backend wallet.
 - Ensure you updated the values at mint.ts.
 - Access the frontend at `http://localhost:3000` (or the specified port).
+- User Needs to first Create an Event from the tab.
+- After that users can join the evnet via the show events tab.
+- Use the management tab to end the event and distribute the rewards to specific people.
+- Go to your events and claim the evnet.
+- Check the backend CLI for updates in Mina NFT.
 
 ## Future Plans
 
