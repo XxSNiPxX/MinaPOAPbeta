@@ -1,0 +1,1011 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=fallback');
+
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+
+/* Additional styles */
+@import 'additional-styles/utility-patterns.css';
+
+@import 'tailwindcss/utilities';
+
+.manage-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.manage-modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 500px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1010; /* Ensure it appears above the background */
+}
+
+.manage-modal-content h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.manage-modal-content ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0;
+}
+
+.manage-modal-content li {
+  margin: 10px 0;
+}
+
+.manage-modal-content label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.manage-modal-content .btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.manage-modal-content .btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.manage-modal-content .btn-primary:hover {
+  background-color: #0056b3;
+}
+
+.manage-modal-content .btn-secondary {
+  background-color: #6c757d;
+  color: white;
+}
+
+.manage-modal-content .btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+/* Reset and base styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  line-height: 1.5;
+  color: #4a5568;
+}
+
+/* Container */
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* New feature banner */
+.new-feature {
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.new-badge {
+  background-color: #e0e0e0;
+  color: #333;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+}
+
+/* Headings */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 2rem;
+}
+
+/* Form layout */
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+@media (min-width: 768px) {
+  .form-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Image upload card */
+.upload-card {
+  background-color: #f5f5f5;
+  border: 2px dashed #ccc;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+.upload-icon {
+  width: 3rem;
+  height: 3rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.upload-title {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+
+.upload-subtitle {
+  font-size: 0.875rem;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+.upload-button {
+  background-color: #e0e0e0;
+  color: #333;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.upload-button:hover {
+  background-color: #ccc;
+}
+
+.upload-info {
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 1rem;
+}
+
+/* Form inputs */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.required::after {
+  content: '*';
+  color: #e53e3e;
+  margin-left: 0.25rem;
+}
+
+input[type="text"],
+input[type="url"],
+textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  background-color: #f5f5f5;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+
+input[type="text"]:focus,
+input[type="url"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: #666;
+}
+
+textarea {
+  min-height: 150px;
+  resize: vertical;
+}
+
+.char-count {
+  text-align: right;
+  font-size: 0.75rem;
+  color: #555;
+  margin-top: 0.25rem;
+}
+
+/* Website input */
+.website-input {
+  display: flex;
+}
+
+.website-prefix {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 0.75rem;
+  background-color: #e0e0e0;
+  border: 1px solid #ccc;
+  border-right: none;
+  border-radius: 0.25rem 0 0 0.25rem;
+  color: #333;
+  font-size: 0.875rem;
+}
+
+.website-input input[type="url"] {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+/* Date inputs */
+.date-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.date-input {
+  position: relative;
+}
+
+.date-input input[type="text"] {
+  padding-right: 2.5rem;
+}
+
+.date-icon {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #333;
+  pointer-events: none;
+}
+
+/* Time zone */
+.time-zone {
+  font-size: 0.875rem;
+  color: #555;
+  margin-top: 0.5rem;
+}
+
+/* Footer */
+.form-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e0e0e0;
+}
+
+.footer-info {
+  font-size: 0.875rem;
+  color: #555;
+}
+
+.footer-info a {
+  color: #333;
+  text-decoration: underline;
+}
+
+.footer-actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.button-ghost {
+  background-color: transparent;
+  color: #333;
+  border: none;
+}
+
+.button-ghost:hover {
+  background-color: #f5f5f5;
+}
+
+.button-primary {
+  background-color: #333;
+  color: white;
+  border: none;
+}
+
+.button-primary:hover {
+  background-color: #222;
+}
+
+
+/* Login Page Styles */
+.poap-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* White background */
+}
+
+.poap-login-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Light shadow for a soft effect */
+  width: 100%;
+  max-width: 400px;
+}
+
+.poap-login-title {
+  font-size: 1.5rem;
+  color: #000000; /* Black title */
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+.poap-login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.poap-login-input-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.poap-login-label {
+  font-size: 0.875rem;
+  color: #4a4a4a; /* Dark gray for labels */
+  margin-bottom: 0.25rem;
+}
+
+.poap-login-input {
+  padding: 0.5rem;
+  border: 1px solid #d1d1d1; /* Light gray border */
+  border-radius: 0.25rem;
+  font-size: 1rem;
+}
+
+.poap-login-input:focus {
+  outline: none;
+  border-color: #000000; /* Black border when focused */
+}
+
+.poap-login-button {
+  background-color: #000000; /* Black button */
+  color: white;
+  border: none;
+  padding: 0.75rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.poap-login-button:hover {
+  background-color: #444444; /* Dark gray on hover */
+}
+
+
+/* Events Page Styles */
+.poap-events-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.poap-events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.poap-events-title {
+  font-size: 2rem;
+  color: #6b46c1;
+}
+
+.poap-logout-button {
+  background-color: #e9d5ff;
+  color: #6b46c1;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.poap-logout-button:hover {
+  background-color: #d6bcfa;
+}
+.poap-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5rem;
+}
+
+.poap-event-card {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+}
+
+.poap-event-card:hover {
+  transform: translateY(-5px);
+}
+
+.poap-event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  padding: 1.5rem;
+
+}
+
+.poap-event-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.poap-event-title {
+  font-size: 1.25rem;
+  color: #6b46c1;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.poap-event-description {
+  font-size: 0.875rem;
+  color: #4a5568;
+  margin-bottom: 1rem;
+  overflow: auto;
+  max-height: 4rem;
+}
+
+.poap-event-date {
+  font-size: 0.875rem;
+  color: #805ad5;
+  margin-bottom: 1rem;
+}
+
+.poap-event-actions {
+  margin-top: auto;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.poap-event-button {
+  background-color: #805ad5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.poap-event-button:hover {
+  background-color: #6b46c1;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+/* Form Styles */
+.mina-poap-form-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mina-poap-form-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #000;
+}
+
+.mina-poap-form-group {
+  margin-bottom: 1.5rem;
+}
+
+.mina-poap-form-label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.mina-poap-form-input,
+.mina-poap-form-textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.mina-poap-form-textarea {
+  min-height: 100px;
+}
+
+.mina-poap-form-file-input {
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.mina-poap-form-submit {
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-form-submit:hover {
+  background-color: #333;
+}
+
+/* Homepage Styles */
+.mina-poap-homepage {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.mina-poap-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.mina-poap-title {
+  font-size: 2.5rem;
+  color: #000;
+}
+
+.mina-poap-nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.mina-poap-nav-link {
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.mina-poap-hero {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.mina-poap-hero-title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-hero-text {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mina-poap-features {
+  margin-bottom: 3rem;
+}
+
+.mina-poap-features-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-features-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.mina-poap-features-list li {
+  margin-bottom: 0.5rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+.mina-poap-features-list li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #000;
+}
+
+.mina-poap-cta {
+  text-align: center;
+}
+
+.mina-poap-cta-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-cta-text {
+  margin-bottom: 1.5rem;
+}
+
+.mina-poap-cta-button {
+  display: inline-block;
+  background-color: #000;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-cta-button:hover {
+  background-color: #333;
+}
+
+/* View Event Card Styles */
+.mina-poap-view-event-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.mina-poap-view-event-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.mina-poap-view-event-content {
+  padding: 1.5rem;
+}
+
+.mina-poap-view-event-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-view-event-description {
+  margin-bottom: 1rem;
+}
+
+.mina-poap-view-event-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-view-event-status.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.mina-poap-view-event-status.ended {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.mina-poap-view-event-join {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-view-event-join:hover {
+  background-color: #333;
+}
+
+/* Manage Event Card Styles */
+.manage-poap-events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 5rem;
+}
+.mina-poap-manage-event-card {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  margin-bottom: 2rem;
+  gap: 5rem;
+
+}
+
+.mina-poap-manage-event-image {
+  width: 100%;
+  height: 200px;
+  padding: 1.5rem;
+
+  object-fit: cover;
+}
+
+.mina-poap-manage-event-content {
+  padding: 1.5rem;
+}
+
+.mina-poap-manage-event-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-manage-event-description {
+  margin-bottom: 1rem;
+}
+
+.mina-poap-manage-event-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-manage-event-status.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.mina-poap-manage-event-status.ended {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.mina-poap-manage-event-end {
+  background-color: #000;
+  color: #fff;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-manage-event-end:hover {
+  background-color: #333;
+}
+
+.mina-poap-manage-event-popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mina-poap-manage-event-popup-content {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.mina-poap-manage-event-popup-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-manage-event-attendee-list {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-manage-event-attendee-item {
+  margin-bottom: 0.5rem;
+}
+
+.mina-poap-manage-event-attendee-label {
+  display: flex;
+  align-items: center;
+}
+
+.mina-poap-manage-event-attendee-checkbox {
+  margin-right: 0.5rem;
+}
+
+.mina-poap-manage-event-popup-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.mina-poap-manage-event-popup-confirm,
+.mina-poap-manage-event-popup-cancel {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-manage-event-popup-confirm {
+  background-color: #000;
+  color: #fff;
+}
+
+.mina-poap-manage-event-popup-confirm:hover {
+  background-color: #333;
+}
+
+.mina-poap-manage-event-popup-cancel {
+  background-color: #ccc;
+  color: #000;
+}
+
+.mina-poap-manage-event-popup-cancel:hover {
+  background-color: #999;
+}
+
+/* Your Events Styles */
+.mina-poap-your-events {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+
+}
+
+.mina-poap-your-events-table-container {
+  flex: 1;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.mina-poap-your-events-title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.mina-poap-your-events-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mina-poap-your-events-table th,
+.mina-poap-your-events-table td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.mina-poap-your-events-table th {
+  font-weight: bold;
+  background-color: #f4f4f4;
+}
+
+.mina-poap-your-events-status {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 0.875rem;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+}
+
+.mina-poap-your-events-status.active {
+  background-color: #4caf50;
+  color: #fff;
+}
+
+.mina-poap-your-events-status.ended {
+  background-color: #f44336;
+  color: #fff;
+}
+
+.mina-poap-your-events-claim {
+  background-color: #000;
+  color: #fff;
+  padding: 0.25rem 0.5rem;
+  border: none;
+  border-radius: 4px;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.mina-poap-your-events-claim:hover {
+  background-color: #333;
+}

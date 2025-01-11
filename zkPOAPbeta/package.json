@@ -1,0 +1,40 @@
+{
+  "name": "mosaic-react",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@radix-ui/react-popover": "^1.1.2",
+    "@reduxjs/toolkit": "^2.5.0",
+    "@tailwindcss/forms": "^0.5.7",
+    "axios": "^1.7.9",
+    "chart.js": "^4.4.1",
+    "chartjs-adapter-moment": "^1.0.1",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "jwt-decode": "^4.0.0",
+    "lucide-react": "^0.469.0",
+    "moment": "^2.29.4",
+    "react": "^19.0.0",
+    "react-day-picker": "^9.4.1",
+    "react-dom": "^19.0.0",
+    "react-hook-form": "^7.54.0",
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.0.2",
+    "react-transition-group": "^4.4.5",
+    "tailwind-merge": "^2.6.0",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.16",
+    "postcss": "^8.4.32",
+    "tailwindcss": "^3.3.6",
+    "vite": "^6.0.3"
+  },
+  "packageManager": "yarn@4.5.3+sha512.3003a14012e2987072d244c720506549c1aab73ee728208f1b2580a9fd67b92d61ba6b08fe93f6dce68fd771e3af1e59a0afa28dd242dd0940d73b95fedd4e90"
+}
